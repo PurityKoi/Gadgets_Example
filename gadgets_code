@@ -40,10 +40,14 @@ gadget_list
 For a total of 1 defrule.
 
 CLIPS> (defrule user_data
-      (printout t "Please enter the name of the gadget you would like to know more about" )
-     =>
- (bind ?*Answer* (read)))
+      =>
+      (printout t "Please enter the name of the gadget you would like to know more about" crlf )     
+      (bind ?*Answer* (read)))
+ 
 CLIPS> (rules) ;checking if new rule(user_data) has been added
 gadget_list
 user_data
 For a total of 2 defrules.
+
+CLIPS> (show-defglobals)
+?*Answer* = smartphone
