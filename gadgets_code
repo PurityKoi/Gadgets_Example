@@ -1,0 +1,40 @@
+   CLIPS (6.30 3/17/15)
+CLIPS> (assert (Kabambe calls/rings))
+<Fact-1>
+CLIPS> (assert (Kabambe sends/receives_mssgs))
+<Fact-2>
+CLIPS> (assert (Landline  calls/rings))
+<Fact-3>
+CLIPS> (assert (Smartphone  calls/rings))
+<Fact-4>
+CLIPS> (assert (Smartphone touchscreen))
+<Fact-5>
+CLIPS> (assert (Kabambe screen))
+<Fact-6>
+CLIPS> (assert (Camera screen))
+<Fact-7>
+CLIPS> (assert (Camera takes_photos))
+<Fact-8>
+CLIPS> (assert (Smartphone takes_photos))
+<Fact-9>
+CLIPS> (facts) ;checking fact list
+f-0     (initial-fact)
+f-1     (Kabambe calls/rings)
+f-2     (Kabambe sends/receives_mssgs)
+f-3     (Landline calls/rings)
+f-4     (Smartphone calls/rings)
+f-5     (Smartphone touchscreen)
+f-6     (Kabambe screen)
+f-7     (Camera screen)
+f-8     (Camera takes_photos)
+f-9     (Smartphone takes_photos)
+For a total of 10 facts.
+CLIPS> (defglobal ?*Answer* = nil)  ;creating a global variable to hold the user's answer
+CLIPS> (defrule gadget_list
+         (printout t "GADGETS AVAILABLE IN THE SYSTEM" crlf)
+         (gadget ?name) 
+        =>
+         (printout t ?name crlf)) ;print out list of gadgets available in the system 
+CLIPS> (rules) ;checking whether the rule has been created successfully
+gadget_list
+For a total of 1 defrule.
